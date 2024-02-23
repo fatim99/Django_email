@@ -113,17 +113,20 @@ form label {
 }
 
 form input {
-  padding: 1rem 0;
+  padding: 0.75rem 0; /* Adjust the top and bottom padding as needed */
   width: 100%;
   outline: none;
   border: none;
   border-bottom: 1px solid var(--secondary-color);
+  line-height: 1px;
 }
 
+form input:not(:placeholder-shown) ~ label,
 form input:focus ~ label {
   top: 0;
   font-size: 0.8rem;
 }
+
 
 form p {
   text-align: right;
@@ -228,3 +231,32 @@ form button:hover {
 }
 
 /*...*/
+.input__group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#togglePasswordIcon {
+  position: absolute;
+  right: 10px; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 5px; /* Adjust as needed */
+}
+
+
+.spacer {
+  flex-grow: 1; /* Allow the spacer to grow and push "Forgot password?" to the right */
+}
+
